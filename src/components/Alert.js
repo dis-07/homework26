@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import {ReactComponent as CloseIcon} from '../assets/icons/close.svg'
@@ -46,6 +47,16 @@ const Alert = ({children, color, onClose}) => {
             <StyledButton onClick={onClose}><CloseIcon/></StyledButton>
         </StyledAlert>
     )
+}
+
+Alert.propTypes = {
+    children: PropTypes.node.isRequired,
+    color: PropTypes.oneOf(['primary', 'error', 'warning']),
+    onClose: PropTypes.func,
+}
+
+Alert.defaultProps = {
+    color: 'primary',
 }
 
 export default Alert;

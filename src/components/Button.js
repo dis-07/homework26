@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledButtonDefault = styled.button`   
@@ -72,6 +73,20 @@ const Button = ({children, size, color, disabled, onOpen}) => {
     return (
         <StyledButtonDefault {...buttonProps} size={size} onClick={onOpen}/>
     )
+}
+
+Button.propTypes = {
+    children: PropTypes.node.isRequired,
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    color: PropTypes.oneOf(['primary', 'secondary']),
+    disabled: PropTypes.bool,
+    onOpen: PropTypes.func,
+}
+
+Button.defaulProps = {
+    color: 'primary',
+    size: 'small',
+    disabled: 'false',
 }
 
 export default Button;
