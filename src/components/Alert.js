@@ -32,17 +32,14 @@ const getStyledAlertColor = (color) => {
 
 const Alert = ({children, color, onClose}) => {
 
-    // const 
-
     const alertProps = {
         children,
         color,
         onClose,
     }
 
-
     return (
-        <StyledAlert {...alertProps} color={color}>
+        <StyledAlert {...alertProps}>
             {children}
             <StyledButton onClick={onClose}><CloseIcon/></StyledButton>
         </StyledAlert>
